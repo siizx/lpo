@@ -1,0 +1,22 @@
+pagina F#: https://2023.aulaweb.unige.it/mod/page/view.php?id=68151
+
+Come IDE è consigliablile installare Visual Studio Code. Dopo l'installazione bisogna aggiungere il plugin 'Ionide-fsharp' direttamente dall'editor o manualmente con 'Ctrl+Shift+P' e inserendo il comando 'ext install Ionide-fsharp'oppure selezionando 'Extensions' nel pane a sinistra e cercando 'Ionide-fsharp'.
+
+Uso dell'interprete
+
+Per lanciare una sessione REPL (Read Print Eval Loop) da shell usare 'dotnet fsi'; se si vuole controllare le asserzioni bisogna abilitare l'opzione DEBUG: 'dotnet fsi --define:DEBUG'.
+
+In una sessione REPL le espressioni devono essere terminate con ';;' e i newline vengono ignorati. Per caricare un file di script usare la direttiva '#load "nome-file.fsx";;'.
+
+Per eseguire direttamente da shell un file di script senza aprire una sessione REPL si può usare il comando 'dotnet fsi "nome-file.fsx"'.
+
+Creazione e esecuzione di un progetto F#:
+
+Per la creazione di un progetto F# con Ionide usare da shell il comando 'dotnet new console -lang "F#" -o NomeIonideProject'. Per aprire il progetto cambiare directory con 'cd NomeIonideProject' e poi lanciare Visual Studio Code con il comando 'code .'.
+
+dotnet new console -lang "F#" -o NomeIonideProject
+cd NomeIonideProject
+code .  
+Per valutare il codice nel terminale di Visual Studio Code basta evidenziarlo con il tasto sinistro del mouse ('ctrl-a' evidenzia tutto il codice del file) e usare 'alt-newline'.
+
+Per eseguire un progetto da shell lanciare dalla directory del progetto il comando 'dotnet run' oppure 'dotnet run --project NomeIonideProject' se il comando non viene lanciato dalla directory del progetto.

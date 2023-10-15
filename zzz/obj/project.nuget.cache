@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tFy3MxztWTuQMUk/zs/d9qPVXRMRB+zwU/kbke5xtpaoT0lA1jdZOiUqTb0lWa23Om4tKAJL6eTNI1gKv18WzA==",
+  "success": true,
+  "projectFilePath": "/home/andrea/git/lpo/zzz/zzz.fsproj",
+  "expectedPackageFiles": [
+    "/home/andrea/.nuget/packages/fsharp.core/7.0.0/fsharp.core.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

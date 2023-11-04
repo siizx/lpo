@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rxa1kcRTp6vQBWVSAfvjAtTEjtPjZCP8oHYCOvvVWwVb1tcgog++KJ94UhJpymSErfEG4MM9+AwXeaWONm2hVw==",
+  "success": true,
+  "projectFilePath": "/home/andrea/git/lpo/lect13/lect13/lect13.fsproj",
+  "expectedPackageFiles": [
+    "/home/andrea/.nuget/packages/fsharp.core/7.0.0/fsharp.core.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

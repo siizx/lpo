@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/VpWr0xhgJZVeQUBk+Ekap6fkbqbDhpkrUMhviQoJwzy2+t7oYoLhmZvPDPl6l6jgZUX+rS6+9sqgaK2ymePZw==",
+  "success": true,
+  "projectFilePath": "/home/andrea/git/lpo/lect11/es_x_24_ott/es_x_24_ott.fsproj",
+  "expectedPackageFiles": [
+    "/home/andrea/.nuget/packages/fsharp.core/7.0.0/fsharp.core.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

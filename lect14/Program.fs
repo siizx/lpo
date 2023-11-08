@@ -20,9 +20,18 @@ val accSum: (int list -> int)
 
 
 // Efficient definition of reverse
-let accRev ls = (* parameter ls needed to get a polymorphic function *)
+
+let a = [1;2;3;4;5;6];;
+
+let accRev ls =
     let rec loop acc = function
         | hd::tl -> loop (hd::acc) tl
-        | _ -> acc
+        | [] -> acc // anche _ va bene al posto di []
     loop [] ls;;
+accRev a;;
+
+List.rev a;; // la rev come altre ffunzioni sono gia pre-definite nel linguaggio.
+List.map a;;??
+
+
 

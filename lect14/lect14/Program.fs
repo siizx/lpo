@@ -54,7 +54,6 @@ let map f =
 List.map String.length ["apple"; "orange" ];;
 
 
-
 /////// fold (tail recursion)
 
 let fold f =

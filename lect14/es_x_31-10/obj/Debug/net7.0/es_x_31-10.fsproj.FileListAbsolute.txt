@@ -1,0 +1,4 @@
+/Users/andrea/git/lpo/lect14/es_x_31-10/obj/Debug/net7.0/es_x_31-10.fsproj.AssemblyReference.cache
+/Users/andrea/git/lpo/lect14/es_x_31-10/obj/Debug/net7.0/es_x_31-10.AssemblyInfoInputs.cache
+/Users/andrea/git/lpo/lect14/es_x_31-10/obj/Debug/net7.0/es_x_31-10.AssemblyInfo.fs
+/Users/andrea/git/lpo/lect14/es_x_31-10/obj/Debug/net7.0/es_x_31-10.fsproj.CoreCompileInputs.cache

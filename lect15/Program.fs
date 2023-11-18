@@ -8,6 +8,15 @@ Esempio:
 Gray(Gray(Black, White, Black, White), Black, White, Black) |> invert;;
 val it: QuadTree = Gray (Gray (White, Black, White, Black), White, Black, White)
 
+type QuadTree =
+    | Gray of QuadTree * QuadTree * QuadTree * QuadTree
+    | Black
+    | White
+
+let rec invert = function
+    | Gray(t1,t2,t3,t4) -> Gray(invert t1,invert t2,invert t3,invert t4)
+    | Black -> White
+    | White -> Black
 
 Gray(Gray(Black, White, Black, White), Black, White, Black) |> invert;;
 
@@ -47,17 +56,7 @@ Sign(Add(IntLiteral 1, Mul(IntLiteral 2, IntLiteral 3))) |> prefixNotation;;
 
 
 
-
-
-
-
-
-
-
-
-
 ///////// Soluzioni Prof ////////
-
 
 let rec invert =
     function
@@ -71,11 +70,8 @@ let rec prefixNotation =
     | Add(exp1, exp2) -> $"+ {prefixNotation exp1} {prefixNotation exp2}"
     | Mul(exp1, exp2) -> $"* {prefixNotation exp1} {prefixNotation exp2}"
 
-
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////SOLUZIONI////////////////////////////////////////////////
 
 Soluzione (corretta) Esercizio 1:
 
@@ -92,9 +88,8 @@ let rec invert =
 
 Gray(Gray(Black, White, Black, White), Black, White, Black) |> invert;;
 
-
-
-
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 Soluzione (corretta) Esercizio 2:
 
@@ -114,4 +109,6 @@ let rec prefixNotation =
 
 Sign(Add(IntLiteral 1, Mul(IntLiteral 2, IntLiteral 3))) |> prefixNotation;;
 
+//////////////////////////////////FINE/////////////////////////////////////////////
+//////////////////////////////////FINE/////////////////////////////////////////////
 

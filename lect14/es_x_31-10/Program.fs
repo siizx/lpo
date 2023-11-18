@@ -33,8 +33,6 @@ filter (fun x -> x % 2 = 0) [ -1; 1; -2; 2; 0 ] = [ -2; 2; 0 ] (* tiene solo gli
 
 
 (*2 Definire filter usando List.fold.*)
-
-let g = (fun x -> x % 2 = 0)
 let f = ((<) 0)
 let g = (fun x -> x % 2 = 0)
 let ls = [ -1; 1; -2; 2; 0 ]

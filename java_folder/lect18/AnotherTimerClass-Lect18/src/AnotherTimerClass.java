@@ -47,6 +47,7 @@ public class AnotherTimerClass {
             seconds++;
             if(debug) System.out.println("Passed seconds: " + seconds + "   t1.getTime(): " + t1.getTime());
         }
+
         if(debug) System.out.println("t1.getTime(): " + t1.getTime());
         assert seconds == 60;   // expected to hold
         assert !t1.isRunning(); // expected to hold

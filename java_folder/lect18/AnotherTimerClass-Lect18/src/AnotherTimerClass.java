@@ -22,7 +22,6 @@ public class AnotherTimerClass {
                 this.seconds = 59;
                 this.minutes--;
             }
-
         }
     }
 

@@ -1,0 +1,9 @@
+Javac nomeprogramma oppure *.java.  (java compiler)
+Verra' creato nomefile.class
+Java nomefile.class
+Controllo asserzioni con java -ea nomefile
+Test semplice java -ea nomefile uno due tre
+Output: uno due tre
+
+Java -cp  (class path)
+java -cp pathname filename arguments

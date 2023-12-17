@@ -11,23 +11,24 @@ public class AnotherTimerClass {
 
     public int getTime() {
         // completare
-        return (this.seconds + this.minutes *60);
+        return (this.seconds + this.minutes * 60);
     }
 
-    public void tick() {
+    public AnotherTimerClass tick() {
         // completare
-        if(this.isRunning()){
+        if (this.isRunning()) {
             this.seconds--;
-            if(this.seconds < 0){
+            if (this.seconds < 0) {
                 this.seconds = 59;
                 this.minutes--;
             }
         }
+        return this;
     }
 
     public int reset(int minutes) {
         // completare
-        if(minutes < 0 || minutes > 60)
+        if (minutes < 0 || minutes > 60)
             throw new IllegalArgumentException();
         int prevTime = this.getTime();
         this.seconds = 0;
@@ -39,15 +40,31 @@ public class AnotherTimerClass {
 
         AnotherTimerClass t1 = new AnotherTimerClass();
         t1.reset(1);            // t1 reset to 1 minute
-        if(debug) System.out.println("t1 dopo il reset(1): " + t1.getTime());
+        {
+            if (debug) System.out.println("t1 dopo il reset(1): " + t1.getTime());
+        }
         int seconds = 0;
         while (t1.isRunning()) {
             t1.tick();           // one second per tick
             seconds++;
-            if(debug) System.out.println("Passed seconds: " + seconds + "   t1.getTime(): " + t1.getTime());
+            {
+                if (debug) System.out.println("Passed seconds: " + seconds + "   t1.getTime(): " + t1.getTime());
+            }
+        }
+        {
+            if(debug)System.out.println("t1.getTime(): "+t1.getTime());
         }
 
-        if(debug) System.out.println("t1.getTime(): " + t1.getTime());
+        t1.reset(1);
+        {
+            if (debug) System.out.println("t1 dopo il secondo reset(1): " + t1.getTime());
+        }
+
+        t1.tick().tick();
+        {
+            if (debug) System.out.println("t1 dopo il t1.tick().tick(): " + t1.getTime());
+        }
+
         assert seconds == 60;   // expected to hold
         assert !t1.isRunning(); // expected to hold
     }

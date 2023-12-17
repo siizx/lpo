@@ -1,0 +1,27 @@
+https://2023.aulaweb.unige.it/mod/folder/view.php?id=98013
+
+
+esercizio per lunedì 11 dicembre (espressioni regolari in Java)
+
+Utilizzando il package java.util.regex, completare il codice della classe LineLexer in lexers.zip per
+implementare semplici analizzatori lessicali che processano una linea di testo alla volta; i metodi sono
+specificati nell'interfaccia Lexer.
+Il metodo main utilizza la classe java.util.Scanner per leggere le linee dallo standard input.
+
+Per esempio, se vengono inserite da standard input le linee
+    word12 000text
+    w1@4
+       99
+    ctrl-d (o ctrl-z in Windows)
+il programma stampa per la linea 1
+    lexeme: 'word12' group: 1
+    lexeme: ' ' group: 3
+    lexeme: '000' group: 2
+    lexeme: 'text' group: 1
+per la linea 2
+    lexeme: 'w' group: 1
+    lexeme: '1' group: 2
+    error, skipping the line
+    e per la linea 3
+    lexeme: '   ' group: 3
+    lexeme: '99' group: 2

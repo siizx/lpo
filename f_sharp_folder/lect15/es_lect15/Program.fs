@@ -1,26 +1,40 @@
-﻿/////// SOLUIONI IN FONDO //////
+﻿// +++++++++++++++++++++++ SOLUIONI IN FONDO +++++++++++++++++++++++++
+// +++++++++++++++++++++++ SOLUIONI IN FONDO +++++++++++++++++++++++++
+// +++++++++++++++++++++++ SOLUIONI IN FONDO +++++++++++++++++++++++++
+// +++++++++++++++++++++++ SOLUIONI IN FONDO +++++++++++++++++++++++++
+// +++++++++++++++++++++++ SOLUIONI IN FONDO +++++++++++++++++++++++++
+// +++++++++++++++++++++++ SOLUIONI IN FONDO +++++++++++++++++++++++++
+
 ~ Esercizio 1) Definire il tipo QuadTree degli alberi con i seguenti tipi di nodi:
 
 nodi Gray: hanno sempre quattro figli
 nodi foglia: posso essere di tipo Black o White
 Definire la funzione invert : QuadTree -> QuadTree tale che invert t restituisce l'albero ottenuto da t invertendo il colore di tutti i nodi foglia e lasciando invariati quelli di tipo Gray.
+
 Esempio:
+
 Gray(Gray(Black, White, Black, White), Black, White, Black) |> invert;;
+
 val it: QuadTree = Gray (Gray (White, Black, White, Black), White, Black, White)
+
+// ++++++++ Svolgo:
 
 type QuadTree =
     | Gray of QuadTree * QuadTree * QuadTree * QuadTree
     | Black 
     | White
 
-let invert t =
-    let rec aux = function
-        | Black -> White
-        | White -> Black
-        | Gray(t1,t2,t3,t4) -> Gray(aux t1, aux t2, aux t3, aux t4)
-    aux t
+let rec invert = function // non serve specificare un argomento in entrata perche' e' gia progettato implicitamente nel 'function' ---- This is equivalent to writing let rec invert t = match t with
+    | Black -> White
+    | White -> Black
+    | Gray(t1,t2,t3,t4) -> Gray(invert t1, invert t2, invert t3, invert t4)
+
 
 Gray(Gray(Black, White, Black, White), Black, White, Black) |> invert;;
+
+// ================== FINE SVOLGIMENTO GRAY
+
+// ++++++++++++++ ESERCIZIO 2:
 
 ~ esercizio 2) Dato il tipo dell'albero della sintassi 
                 astratta per semplici espressioni aritmetiche
@@ -41,38 +55,14 @@ type ExpAST =
     | Add of ExpAST * ExpAST
     | Mul of ExpAST * ExpAST
 
-let rec prefixNotation t =
-    let rec aux = function
-        | IntLiteral n -> $"{n}"
-        | Sign exp -> $"- {prefixNotation exp}"
-        | Add(exp1,exp2) -> $"+ {prefixNotation exp1} {prefixNotation exp2}"
-        | Mul(exp1,exp2) -> $"* {prefixNotation exp1} {prefixNotation exp2}"
-    aux t
-
-Sign(Add(IntLiteral 1, Mul(IntLiteral 2, IntLiteral 3))) |> prefixNotation;;
-
-
-
-
-
-
-
-
-
-
-///////// Soluzioni Prof ////////
-
-let rec invert =
-    function
-    | Gray(t1, t2, t3, t4) -> Gray(invert t1, invert t2, invert t3, invert t4)
-    | Black -> White
-    | White -> Black
-let rec prefixNotation =
-    function
+let rec kkk = function 
     | IntLiteral n -> $"{n}"
-    | Sign exp -> $"- {prefixNotation exp}"
-    | Add(exp1, exp2) -> $"+ {prefixNotation exp1} {prefixNotation exp2}"
-    | Mul(exp1, exp2) -> $"* {prefixNotation exp1} {prefixNotation exp2}"
+    | Sign(exp) -> $"- {kkk exp}"
+    | Add(exp1, exp2) -> $"+ {kkk exp1} {kkk exp2}"
+    | Mul(exp1, exp2) -> $"* {kkk exp1} {kkk exp2}"
+
+Sign(Add(IntLiteral 1, Mul(IntLiteral 2, IntLiteral 3))) |> kkk;;
+
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////SOLUZIONI////////////////////////////////////////////////
@@ -113,6 +103,6 @@ let rec prefixNotation =
 
 Sign(Add(IntLiteral 1, Mul(IntLiteral 2, IntLiteral 3))) |> prefixNotation;;
 
-//////////////////////////////////FINE/////////////////////////////////////////////
-//////////////////////////////////FINE/////////////////////////////////////////////
+
+
 

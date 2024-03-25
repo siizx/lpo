@@ -64,8 +64,10 @@ let rec kkk = function
 Sign(Add(IntLiteral 1, Mul(IntLiteral 2, IntLiteral 3))) |> kkk;;
 
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////SOLUZIONI////////////////////////////////////////////////
+// +++++++++++ SOLUZIONI +++++++++++++
+// +++++++++++ SOLUZIONI +++++++++++++
+// +++++++++++ SOLUZIONI +++++++++++++
+// +++++++++++ SOLUZIONI +++++++++++++
 
 Soluzione (corretta) Esercizio 1:
 

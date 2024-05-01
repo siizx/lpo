@@ -1,0 +1,9 @@
+https://2023.aulaweb.unige.it/mod/page/view.php?id=136600
+
+Modificare il codice del parser visto a lezione in modo che sia guidato dalla grammatica EBNF
+
+Prog ::= Exp EOF
+Exp ::= Mul ('+' Exp)?
+Mul ::= Atom ('*' Mul)?
+Atom ::= Num | '(' Exp ')'
+Num ::= '0' | '1'
